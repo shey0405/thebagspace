@@ -149,5 +149,5 @@ const ExamplePage = StackNavigator({
   Chat4: { screen: ExampleAvatar}
 })
 
-
+//현재 메시지 UI만 나오도록 설정함
 AppRegistry.registerComponent('bagspace', () => ExamplePage);
