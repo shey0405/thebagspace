@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
   }
 })
 
-AppRegistry.registerComponent('bagspace', () => AppNavigator);
+//AppRegistry.registerComponent('bagspace', () => AppNavigator);
