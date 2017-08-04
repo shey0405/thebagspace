@@ -102,5 +102,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   }
 })
-
+//메시지 UI를 컴포넌트로 만드는게 필요할 듯.
 AppRegistry.registerComponent('bagspace', () => AppNavigator);
