@@ -4,21 +4,37 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
+		"test": "jest",
+		"lint": "eslint .",
+		"ios": "react-native run-ios",
+		"server": "nodemon server"
 	},
 	"dependencies": {
-		"react": "16.0.0-alpha.6",
+		"eslint-plugin-import": "^1.16.0",
+		"eslint-plugin-jsx-a11y": "^2.2.3",
+		"express": "^4.15.3",
+		"mongojs": "^2.4.0",
+		"nodemon": "^1.11.0",
+		"react": "^16.0.0-alpha.6",
 		"react-native": "0.44.0",
 		"react-native-deprecated-custom-components": "^0.1.0",
+		"react-native-elements": "^0.15.0",
+		"react-native-gifted-chat": "^0.2.5",
 		"react-native-image-slider": "^1.1.5",
 		"react-native-material-dialog": "^0.4.4",
+		"react-native-simple-radio-button": "^2.6.0",
+		"react-native-socket.io-client": "^1.4.8",
 		"react-native-viewpager": "^0.2.13",
 		"react-navigation": "^1.0.0-beta.11",
-		"rn-viewpager": "^1.2.3"
+		"rn-viewpager": "^1.2.3",
+		"socket.io-client": "^2.0.3"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",
 		"babel-preset-react-native": "2.1.0",
+		"eslint": "^3.19.0",
+		"eslint-config-rallycoding": "^3.2.0",
+		"eslint-plugin-react": "^6.10.3",
 		"jest": "20.0.4",
 		"react-test-renderer": "16.0.0-alpha.6"
 	},

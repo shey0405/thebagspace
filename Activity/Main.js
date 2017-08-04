@@ -28,8 +28,8 @@ export default AppNavigator = TabNavigator({
 			tabBarLabel: ({ tintColor }) => (
 				<View style={styles.tabTextWrap}>
           <Image
-          style = {styles.image}
-          source = {require('../img/enroll_unactive.png')} />
+          style={styles.image}
+          source={require('../img/enroll_unactive.png')} />
         </View>
 			),
 
@@ -41,8 +41,8 @@ export default AppNavigator = TabNavigator({
 			tabBarLabel: ({ tintColor }) => (
 				<View style={styles.tabTextWrap}>
           <Image
-          style = {styles.image}
-          source = {require('../img/message_unactive.png')} />
+          style={styles.image}
+          source={require('../img/message_unactive.png')} />
 				</View>
 			),
 
@@ -54,8 +54,8 @@ export default AppNavigator = TabNavigator({
 			tabBarLabel: ({ tintColor }) => (
 				<View style={styles.tabTextWrap}>
           <Image
-          style = {styles.image}
-          source = {require('../img/mypage_unactive.png')} />
+          style={styles.image}
+          source={require('../img/mypage_unactive.png')} />
 				</View>
 			),
 		}
@@ -75,7 +75,6 @@ export default AppNavigator = TabNavigator({
 		},
 		lazy: true
 	});
-
 
 
 const styles = StyleSheet.create({

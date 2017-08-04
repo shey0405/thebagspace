@@ -31,8 +31,6 @@
 
    }
 
-
-
        render(){
 
          if(this.state.select_value=='empty'){
@@ -89,8 +87,6 @@
        }
 
 
-
-
  }
 
 class Title extends Component {
@@ -120,9 +116,6 @@ class Figure extends Component {
     )
   }
 }
-
-
-
 
 
 const styles = StyleSheet.create({
