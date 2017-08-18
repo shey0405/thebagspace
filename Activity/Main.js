@@ -5,8 +5,19 @@ import { TabNavigator } from 'react-navigation'
 
 import tabScreen1 from './TabScreen1'
 import tabScreen2 from './TabScreen2'
-import tabScreen3 from './TabScreen3'
+import {ExamplePage} from './TabScreen3'
 import tabScreen4 from './TabScreen4'
+
+
+export class tabScreen3 extends Component {
+	render() {
+		return (
+			<View style={styles.wrapper}>
+				{ExamplePage}
+			</View >
+		);
+	}
+}
 
 export default AppNavigator = TabNavigator({
 	Screen1: {

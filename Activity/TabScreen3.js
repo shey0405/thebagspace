@@ -11,7 +11,7 @@ import { GiftedChat } from 'react-native-gifted-chat'
 const USER_ID = '@userId';
 const ADMIN_ID = '@adminId';
 
-export default class HomeScreen extends React.Component{
+class HomeScreen extends React.Component{
 
   constructor(props){
   super(props);
@@ -137,13 +137,12 @@ render() {
 }
 }
 
-
-const ExamplePage = StackNavigator({
-  Home: { screen: HomeScreen },
-  Chat1: { screen: Main },
-  Chat2: { screen: MessageBox },
-  Chat3: { screen: ChatWithAdm },
-  Chat4: { screen: ExampleAvatar } });
+export const ExamplePage = StackNavigator({
+    Home: { screen: HomeScreen },
+    Chat1: { screen: Main },
+    Chat2: { screen: MessageBox },
+    Chat3: { screen: ChatWithAdm },
+    Chat4: { screen: ExampleAvatar } });
 
 
 //AppRegistry.registerComponent('bagspace', () => ExamplePage);
