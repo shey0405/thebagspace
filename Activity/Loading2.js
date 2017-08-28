@@ -3,6 +3,7 @@ import {
   Navigator
 } from 'react-native-deprecated-custom-components';
 
+import { Actions } from 'react-native-router-flux';
 import {
   AppRegistry,
     StyleSheet,

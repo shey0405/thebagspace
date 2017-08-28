@@ -1,91 +1,27 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, AppRegistry, Image } from 'react-native'
-
+import { Action } from 'react-native-router-flux'
 import { TabNavigator } from 'react-navigation'
-
-import tabScreen1 from './TabScreen1'
-import tabScreen2 from './TabScreen2'
-import {ExamplePage} from './TabScreen3'
-import tabScreen4 from './TabScreen4'
+import {ReceiverRouter} from './Router'
 
 
-export class tabScreen3 extends Component {
+export default class Main extends Component {
+
+renderMain(){
+
+	 Actions.ReceiverRouter();
+
+}
+
 	render() {
 		return (
 			<View style={styles.wrapper}>
-				{ExamplePage}
+				{this.renderMain}
 			</View >
 		);
 	}
 }
 
-export default AppNavigator = TabNavigator({
-	Screen1: {
-		screen: tabScreen1,
-		navigationOptions: {
-			tabBarLabel: ({ tintColor }) => (
-				<View style={styles.tabTextWrap}>
-          <Image
-          style = {styles.image}
-          source = {require('../img/home_unactivate.png')} />
-				</View>
-			),
-
-		}
-	},
-	Screen2: {
-		screen: tabScreen2,
-		navigationOptions: {
-			tabBarLabel: ({ tintColor }) => (
-				<View style={styles.tabTextWrap}>
-          <Image
-          style={styles.image}
-          source={require('../img/enroll_unactive.png')} />
-        </View>
-			),
-
-		}
-	},
-	Screen3: {
-		screen: tabScreen3,
-		navigationOptions: {
-			tabBarLabel: ({ tintColor }) => (
-				<View style={styles.tabTextWrap}>
-          <Image
-          style={styles.image}
-          source={require('../img/message_unactive.png')} />
-				</View>
-			),
-
-		}
-	},
-	Screen4: {
-		screen: tabScreen4,
-		navigationOptions: {
-			tabBarLabel: ({ tintColor }) => (
-				<View style={styles.tabTextWrap}>
-          <Image
-          style={styles.image}
-          source={require('../img/mypage_unactive.png')} />
-				</View>
-			),
-		}
-	},
-}, {
-		initialRouteName: 'Screen1',
-		tabBarPosition: 'bottom',
-		tabBarOptions: {
-			activeTintColor: 'red',
-			inactiveTintColor: 'black',
-			style: {
-				borderTopColor: '#f4f4f4',
-				borderTopWidth: 1,
-        height: 58,
-			},
-			showIcon: true,
-		},
-		lazy: true
-	});
 
 
 const styles = StyleSheet.create({
@@ -114,4 +50,4 @@ const styles = StyleSheet.create({
   }
 })
 //메시지 UI를 컴포넌트로 만드는게 필요할 듯.
-AppRegistry.registerComponent('bagspace', () => AppNavigator);
+//AppRegistry.registerComponent('bagspace', () => AppNavigator);
