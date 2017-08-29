@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
-import { Text, View, StyleSheet, Button , Image, TextInput} from 'react-native';
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
+import React, { Component } from 'react';
+import { Text, Image, StyleSheet, View, TextInput,Button, TouchableHighlight } from 'react-native';
+import { carrierUpdate } from '../../actions';
+import { connect } from 'react-redux';
 
 var radio_props = [
 	{ label: '예', value: 0 },
 	{ label: '다른 유럽국을 먼저 여행', value: 1 }
 ];
 
-export default class extends Component {
+class RegisterPageCR extends Component {
 
 	constructor(props) {
 		super(props)
@@ -33,7 +35,8 @@ export default class extends Component {
 						placeholder="kg"
 						maxLength = {12}
 						autoCorrect= {false}
-          	onChangeText={(weight_carrier) => this.setState({weight_carrier})}/>
+          	onChangeText={value => this.props.carrierUpdate({ prop: 'emptyweight', value })}
+						/>
 					</View>
 
 					<View style={styles.text_box}>
@@ -42,7 +45,8 @@ export default class extends Component {
 						placeholder="년/월/일"
 						maxLength = {12}
 						autoCorrect= {false}
-						onChangeText={(prague_arrival) => this.setState({prague_arrival})}/>
+						onChangeText={value => this.props.carrierUpdate({ prop: 'praguearrival', value })}
+						/>
 					</View>
 					<View style={styles.text_box}>
 						<Text style={styles.text_box_center}>
@@ -73,7 +77,8 @@ export default class extends Component {
 						autoCorrect= {false}
 						placeholder="년/월/일/시/분"
 						maxLength = {12}
-						onChangeText={(korea_depart_air) => this.setState({korea_depart_air})}/>
+						onChangeText={value => this.props.carrierUpdate({ prop: 'airdepart', value })}
+						/>
 					</View>
 
 					<View style={styles.text_box}>
@@ -82,7 +87,8 @@ export default class extends Component {
 						autoCorrect= {false}
 						placeholder="년/월/일/시/분"
 						maxLength = {12}
-						onChangeText={(prague_arrival_air) => this.setState({prague_arrival_air})}/>
+						onChangeText={value => this.props.carrierUpdate({ prop: 'airarrival', value })}
+						/>
 					</View>
 
 					<View style={styles.text_box}>
@@ -91,7 +97,8 @@ export default class extends Component {
 						autoCorrect= {false}
 						placeholder=" 비행기편명 "
 						maxLength = {12}
-						onChangeText={(name_air) => this.setState({name_air})}/>
+						onChangeText={value => this.props.carrierUpdate({ prop: 'airname', value })}
+						/>
 					</View>
 
 					<Text style={styles.text_box_left_bottom_selection}>
@@ -104,6 +111,7 @@ export default class extends Component {
 						onChangeText={(introduce) => this.setState({ introduce }) }
 						//placeholder=" 한줄소개 "
 						maxLength = {20}
+						onChangeText={value => this.props.carrierUpdate({ prop: 'introduce', value })}
 						/>
 					</View>
 					<Text style={styles.text_box_left_bottom_comment}>
@@ -217,3 +225,11 @@ const styles = StyleSheet.create({
 		color: 'gray',
 	},
 })
+
+const mapStateToProps = (state) => {
+  const { emptyweight, praguearrival, airdepart, airarrival, airname, introduce } = state.carrierForm;
+
+  return  { emptyweight, praguearrival, airdepart, airarrival, airname, introduce };
+};
+
+export default connect(mapStateToProps, { carrierUpdate })(RegisterPageCR);

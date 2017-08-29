@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Text, Image, styleSheet, View, TextInput,Button, TouchableHighlight } from 'react-native';
+import { receiverUpdate } from '../../actions';
+import { connect } from 'react-redux';
 
 const rgpageFontSize = 13;
 
-export default class RegisterPage extends Component {
+class RegisterPageRC extends Component {
 
 
 render(){
@@ -28,6 +30,8 @@ render(){
             autoCorrect= {false}
             placeholder="2017"
             maxLength = {4}
+            value = {this.props.rcyear}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'rcyear', value })}
             />
           </View>
           <View style={{ padding:0.5,borderColor: 'gray'}}>
@@ -39,6 +43,8 @@ render(){
             autoCorrect= {false}
             placeholder="**"
             maxLength = {2}
+            value = {this.props.rcmonth}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'rcmonth', value })}
             />
           </View>
           <View style={{ padding:0.5,borderColor: 'gray' }}>
@@ -50,6 +56,8 @@ render(){
             autoCorrect= {false}
             placeholder="**"
             maxLength = {2}
+            value = {this.props.rcday}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'rcday', value })}
             />
           </View>
           <View style={{ padding:0.5,borderColor: 'gray' }}>
@@ -69,6 +77,8 @@ render(){
             autoCorrect= {false}
             placeholder="예)프라하 바플라츠광장 BATA 신발가게 앞"
             maxLength = {20}
+            value = {this.props.rcspot}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'rcspot', value })}
             />
           </View>
         </View>
@@ -84,6 +94,8 @@ render(){
             autoCorrect= {false}
             placeholder="**"
             maxLength = {2}
+            value = {this.props.fhour}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'fhour', value })}
             />
           </View>
           <View style={{ padding:0.5,borderColor: 'gray'}}>
@@ -95,6 +107,8 @@ render(){
             autoCorrect= {false}
             placeholder="**"
             maxLength = {2}
+            value = {this.props.fminute}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'fminute', value })}
             />
           </View>
           <View style={{ padding:0.5,borderColor: 'gray' }}>
@@ -109,6 +123,8 @@ render(){
             autoCorrect= {false}
             placeholder="**"
             maxLength = {2}
+            value = {this.props.thour}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'thour', value })}
             />
           </View>
           <View style={{ padding:0.5,borderColor: 'gray' }}>
@@ -120,6 +136,8 @@ render(){
             autoCorrect= {false}
             placeholder="**"
             maxLength = {2}
+            value = {this.props.tminute}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'tminute', value })}
             />
           </View>
           <View style={{ padding:0.5,borderColor: 'gray' }}>
@@ -147,6 +165,8 @@ render(){
             autoCorrect= {false}
             placeholder="예)도서 3권"
             maxLength = {20}
+            value = {this.props.items}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'items', value })}
             />
           </View>
         </View>
@@ -163,6 +183,8 @@ render(){
             autoCorrect= {false}
             autoCapitalize = 'none'
             maxLength = {70}
+            value = {this.props.itemlink}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'itemlink', value })}
             />
           </View>
         </View>
@@ -179,6 +201,8 @@ render(){
             autoCapitalize = 'none'
             placeholder="예)만화 삼국지2권, 프라하이야기 1권"
             maxLength = {20}
+            value = {this.props.options}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'options', value })}
             />
           </View>
         </View>
@@ -194,6 +218,8 @@ render(){
             autoCorrect= {false}
             autoCapitalize = 'none'
             maxLength = {20}
+            value = {this.props.price}
+            onChangeText={value => this.props.receiverUpdate({ prop: 'price', value })}
             />
           </View>
           <View style={{ padding:0.5,borderColor: 'gray' }}>
@@ -239,3 +265,12 @@ render(){
     )
   }
 }
+const mapStateToProps = (state) => {
+  const { rcyear, rcmonth, rcday, rcspot, fhour, fminute, thour,
+     tminute, items, itemlink, options, price } = state.receiverForm;
+
+  return  { rcyear, rcmonth, rcday, rcspot, fhour, fminute,
+    thour, tminute, items, itemlink, options, price };
+};
+
+export default connect(mapStateToProps, { receiverUpdate })(RegisterPageRC);

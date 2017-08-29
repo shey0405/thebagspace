@@ -1,2 +1,2 @@
-export * from './CarrierRegisterActions';
-export * from './ReceiverRegisterActions';
+export * from './CarrierActions';
+export * from './ReceiverActions';

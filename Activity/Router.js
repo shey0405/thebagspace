@@ -3,15 +3,15 @@ import { AppRegistry, Text, View, Image } from 'react-native'
 import { Scene, Router, Actions, TabBar, Tabs, Overlay } from 'react-native-router-flux';
 import FirstPage from './FirstPage'
 
-import MainPage_R from './receiver_component/mainpage/MainPage';
+import MainPage_R from './receiver_component/mainpage/CarrierList';
 import MessagePage_R from './receiver_component/message/MessagePage';
 import MyPage_R from './receiver_component/mypage/MyPage';
-import RegisterPage_R from './receiver_component/registerpage/RegisterPage';
+import RegisterPage_R from './receiver_component/registerpage/RegisterPageRC';
 
-import MainPage_C from './carrier_component/mainpage/MainPage';
+import MainPage_C from './carrier_component/mainpage/ReceiverList';
 import MessagePage_C from './carrier_component/message/MessagePage';
 import MyPage_C from './carrier_component/mypage/MyPage';
-import RegisterPage_C from './carrier_component/registerpage/RegisterPage';
+import RegisterPage_C from './carrier_component/registerpage/RegisterPageCR';
 
 
 

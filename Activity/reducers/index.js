@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
-import ReceiverBoardReducer from './ReceiverBoard';
-import CarrierBoardReducer from './CarrierBoard';
+import ReceiverFormReducer from './ReceiverFormReducer';
+import CarrierFormReducer from './CarrierFormReducer';
+import ReceiverReducer from './ReceiverReducer';
+import CarrierReducer from './CarrierReducer';
+
 
 export default combineReducers({
-  receiverboard: ReceiverBoardReducer,
-  carrierboard: CarrierBoardReducer
+  receiverForm: ReceiverFormReducer,
+  carrierForm: CarrierFormReducer,
+  receivers: CarrierReducer,
+  carriers: ReceiverReducer
 });
